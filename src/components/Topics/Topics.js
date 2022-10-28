@@ -20,7 +20,6 @@ const Topics = () => {
               className=" d-flex justify-content-center my-4"
             >
               <EachCard data={eachData}></EachCard>
-              {console.log(eachData.id)}
             </Col>
           ))}
         </Row>

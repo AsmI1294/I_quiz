@@ -1,0 +1,11 @@
+.foot {
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+}
+.pos {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
