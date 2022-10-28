@@ -3,6 +3,8 @@ import { Button } from "react-bootstrap";
 
 import { useLoaderData } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import Quiz from "../Quiz/Quiz";
 
 const Quizes = () => {
@@ -25,6 +27,16 @@ const Quizes = () => {
       document.getElementById(
         "score"
       ).innerHTML = `Score: 0/${questions.length}`;
+      toast.warn("Please answer all the questions!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     } else {
       let Total = state.reduce(
         (previousValue, currentValue) => previousValue + currentValue,
@@ -56,6 +68,7 @@ const Quizes = () => {
           Submit
         </Button>
       </div>
+      <ToastContainer />
     </div>
   );
 };
