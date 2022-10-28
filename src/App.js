@@ -7,6 +7,7 @@ import Topics from "./components/Topics/Topics";
 import Statistics from "./components/Statistics/Statistics";
 import Blogs from "./components/Blogs/Blogs";
 import Quizes from "./components/Quizes/Quizes";
+import Error from "./components/Error/Error";
 
 function App() {
   const router = createBrowserRouter([
@@ -30,6 +31,7 @@ function App() {
           element: <Statistics></Statistics>,
         },
         { path: "blogs", element: <Blogs></Blogs> },
+        { path: "*", element: <Error></Error> },
         {
           path: "quizes/:id",
           loader: ({ params }) =>
