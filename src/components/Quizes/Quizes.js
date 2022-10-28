@@ -18,7 +18,11 @@ const Quizes = () => {
     console.log(newState);
   }
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
   }, []);
   const submit = () => {
     if (state.includes(undefined)) {
@@ -50,10 +54,12 @@ const Quizes = () => {
   };
   return (
     <div>
-      <div
-        id="score"
-        className="text-center display-3 bg-info fw-semibold text-secondary"
-      ></div>
+      <div className="d-flex justify-content-between display-3 bg-info fw-semibold text-secondary">
+        <div style={{ width: "62%" }} className="text-end ">
+          Quiz on {data.name}
+        </div>
+        <div id="score"></div>
+      </div>
       <div>
         {questions.map((ques, id) => (
           <Quiz key={ques.id} id={id} isCorrect={isCorrect} ques={ques}></Quiz>
