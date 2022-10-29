@@ -10,6 +10,7 @@ import Quiz from "../Quiz/Quiz";
 const Quizes = () => {
   const { data } = useLoaderData();
   const { questions } = data;
+  // state array of binary values to gather all the clicked answers and also to determine correct and wrong ones
   const [state, setState] = useState(new Array(questions.length));
   function isCorrect(id, ans) {
     let newState = [...state];
@@ -24,6 +25,7 @@ const Quizes = () => {
       behavior: "instant",
     });
   }, []);
+  // conditions on what happens if the quiz is submitted
   const submit = () => {
     if (state.includes(undefined)) {
       window.scrollTo(0, 0);
@@ -61,6 +63,7 @@ const Quizes = () => {
         <div id="score"></div>
       </div>
       <div>
+        {/* take each questions */}
         {questions.map((ques, id) => (
           <Quiz key={ques.id} id={id} isCorrect={isCorrect} ques={ques}></Quiz>
         ))}

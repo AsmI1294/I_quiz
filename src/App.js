@@ -10,6 +10,7 @@ import Quizes from "./components/Quizes/Quizes";
 import Error from "./components/Error/Error";
 
 function App() {
+  //routing
   const router = createBrowserRouter([
     {
       path: "/",

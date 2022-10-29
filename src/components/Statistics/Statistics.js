@@ -21,7 +21,8 @@ const Statistics = () => {
         Number of quizes on all the topics
       </p>
       <div className="d-flex justify-content-center">
-        <ResponsiveContainer width="70%" height={500}>
+        {/* recharts Barchart */}
+        <ResponsiveContainer width="70%" height="60%">
           <BarChart
             data={data}
             margin={{

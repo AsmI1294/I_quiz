@@ -6,10 +6,10 @@ import "./Quiz.css";
 
 const Quiz = ({ ques, id, isCorrect }) => {
   let ele = document.getElementsByName(ques.id);
+  //state to show correct value if eye icon is pressed
   const [success, setSuccess] = useState(false);
   const [eyeId, setEyeId] = useState(0);
   function displayRadioValue() {
-    //console.log(ele[1].nextElementSibling.innerHTML);
     for (let i = 0; i < ele.length; i++) {
       if (ele[i].checked) {
         if (ele[i].value === ques.correctAnswer) {
