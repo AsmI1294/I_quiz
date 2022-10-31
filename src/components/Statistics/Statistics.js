@@ -22,7 +22,7 @@ const Statistics = () => {
       </p>
       <div className="d-flex justify-content-center">
         {/* recharts Barchart */}
-        <ResponsiveContainer width="70%" height="60%">
+        <ResponsiveContainer width={"50%"} height={500}>
           <BarChart
             data={data}
             margin={{
